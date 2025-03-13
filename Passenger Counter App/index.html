@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Passenger Counter Application">
+    <title>Passenger Counter | Transit Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <div class="counter-card">
+            <h1 class="counter-title">Passengers Entered</h1>
+            <div class="counter-display" id="count-el" aria-live="polite">0</div>
+            
+            <div class="controls">
+                <button class="btn btn-increment" id="increment-btn" aria-label="Add passenger">
+                    <span class="btn-content" aria-hidden="true">+</span>
+                </button>
+                <button class="btn btn-save" id="save-btn" aria-label="Save current count">
+                    <span class="btn-content" aria-hidden="true">Save Entry</span>
+                </button>
+            </div>
+
+            <section class="history" aria-labelledby="history-heading">
+                <h2 id="history-heading" class="history-title">Entry History</h2>
+                <ul id="save-el" class="history-list"></ul>
+            </section>
+        </div>
+    </main>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
