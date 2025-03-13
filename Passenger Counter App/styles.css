@@ -1,0 +1,128 @@
+/* CSS Variables for theme management */
+:root {
+    --primary-color: #e31837;
+    --secondary-color: #017749;
+    --text-primary: #1a1a1a;
+    --text-inverse: #ffffff;
+    --background-base: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('station.jpg');
+    --spacing-unit: 1rem;
+    --border-radius: 8px;
+    --transition-timing: 0.2s ease;
+}
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--background-base) no-repeat center/cover;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-inverse);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-unit);
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.counter-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+.counter-title {
+    color: var(--text-primary);
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-unit);
+    font-weight: 600;
+}
+
+.counter-display {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: calc(var(--spacing-unit) * 2) 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.controls {
+    display: grid;
+    gap: var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.btn {
+    border: none;
+    padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 2);
+    font-size: 1.125rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: 
+        transform var(--transition-timing),
+        opacity var(--transition-timing),
+        filter var(--transition-timing);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 48px;
+}
+
+.btn:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+    filter: brightness(0.9);
+}
+
+.btn-increment {
+    background-color: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+.btn-save {
+    background-color: var(--secondary-color);
+    color: var(--text-inverse);
+}
+
+.history-title {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-unit);
+}
+
+.history-list {
+    list-style: none;
+    display: grid;
+    gap: calc(var(--spacing-unit) * 0.5);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+}
